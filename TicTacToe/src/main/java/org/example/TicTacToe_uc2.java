@@ -1,36 +1,38 @@
-package org.example;
+import java.util.Random;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class TicTacToe_uc2 {
-     static boolean isHumanTurn;
-     static char humanSymbol;
-     static char computerSymbol
 
- public static void main(string[] args){
-         tossAndAssignSymbol();
-         displayTossResult();
- }
+    static boolean isHumanTurn;
+    static char humanSymbol;
+    static char computerSymbol;
 
- static void tossAndAssignSymbol(){
-         Random random = new Random ();
-         int toss = random.nextInt(2);
-         if (toss == 0){
-             isHumanSymbol = 'X';
-             humanSymbol ='o';
-         }else {
-             isHumanTurn = false;
-             humanSymbol = 'o';
-             computerSymbol = 'X';
-         }
- }
- static void displayTossResult (){
-         if (isHumanTurn){
-             system.out.println("Human won the toss and plays first")
-         }else {
-             system.out.println("computer won the toss and palys first")
-         }
-      system.out.println("Human Symbol : " + human symbol);
-         system.out.println("computer symbol");
- }
+    public static void main(String[] args) {
+        tossAndAssignSymbols();
+        displayTossResult();
+    }
+
+    static void tossAndAssignSymbols() {
+        Random random = new Random();
+
+        if (random.nextBoolean()) {
+            isHumanTurn = true;
+            humanSymbol = 'X';
+            computerSymbol = 'O';
+        } else {
+            isHumanTurn = false;
+            humanSymbol = 'O';
+            computerSymbol = 'X';
+        }
+    }
+
+    static void displayTossResult() {
+        if (isHumanTurn) {
+            System.out.println("Human won the toss and will play first.");
+        } else {
+            System.out.println("Computer won the toss and will play first.");
+        }
+
+        System.out.println("Human Symbol: " + humanSymbol);
+        System.out.println("Computer Symbol: " + computerSymbol);
+    }
 }
